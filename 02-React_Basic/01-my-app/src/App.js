@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import MenuMakanan from './components/MenuMakanan/MenuMakanan';
 import './App.css';
+
+import MenuMakanan from './components/MenuMakanan/MenuMakanan';
+import MenuMinuman from './components/MenuMinuman/MenuMinuman';
 
 class App extends Component {
   render() {
@@ -11,10 +13,7 @@ class App extends Component {
           <MenuMakanan />
           
           <h2>Menu Minumam</h2>
-          <div style={{ border: "1px solid black", width: 300, margin: 'auto'}}>
-            <p>Nama Menu: Kopi Late</p>
-            <p>Harga: Rp. 25.000</p>
-          </div>
+          <MenuMinuman />
       </div>
     );
   }
