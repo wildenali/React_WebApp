@@ -9,7 +9,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      namaCafe: 'Wilden Ali'
+      namaCafe: 'Wilden Ali',
+      menuMakanan: [
+        { nama: 'Ayam Bakar', harga: 25000, stock: 10 },
+        { nama: 'Nasi Bakar', harga: 21000, stock: 0 },
+      ]
     }
   }
 
@@ -30,11 +34,19 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Caffee { this.state.namaCafe }</h1>
-        <button onClick={this.handleGantiNama}>Ganti Nama Kafe</button>
+        <button className="btn btn-success" onClick={this.handleGantiNama}>Ganti Nama Kafe</button>
 
         <h2 className="header-menu">Menu Makanan</h2>
-        <MenuMakanan namaMenu={"Ayam Bakar"} hargaMenu={35000}/>
-        <MenuMakanan namaMenu={"Indomie Rebus"} hargaMenu={15000}/>
+        <MenuMakanan 
+          namaMenu={this.state.menuMakanan[0].nama}
+          hargaMenu={this.state.menuMakanan[0].harga}
+          stock={this.state.menuMakanan[0].stock}
+        />
+        <MenuMakanan 
+          namaMenu={this.state.menuMakanan[1].nama}
+          hargaMenu={this.state.menuMakanan[1].harga}
+          stock={this.state.menuMakanan[1].stock}
+        />
         
         <h2 style={mainContentStyle}>Menu Minuman</h2>
         <MenuMinuman namaMenu={"Es Teh Manis"} hargaMenu={5000}/>
