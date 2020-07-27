@@ -19,6 +19,14 @@ class App extends Component {
   }
 
   render() {
+    
+    const mainContentStyle = {
+      color           : 'yellow',
+      marginTop       : '10px',
+      backgroundColor : 'red',
+      border          : '1px solid black'
+    }
+
     return (
       <div className="App">
         <h1>Caffee { this.state.namaCafe }</h1>
@@ -28,7 +36,7 @@ class App extends Component {
         <MenuMakanan namaMenu={"Ayam Bakar"} hargaMenu={35000}/>
         <MenuMakanan namaMenu={"Indomie Rebus"} hargaMenu={15000}/>
         
-        <h2>Menu Minumam</h2>
+        <h2 style={mainContentStyle}>Menu Minuman</h2>
         <MenuMinuman namaMenu={"Es Teh Manis"} hargaMenu={5000}/>
         <MenuMinuman namaMenu={"Jeruk Panas"} hargaMenu={10000}/>
       </div>
