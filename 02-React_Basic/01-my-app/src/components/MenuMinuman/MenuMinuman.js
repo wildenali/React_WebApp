@@ -20,7 +20,7 @@ class MenuMinuman extends Component {
       <div style={{ border: "1px solid black", width: 300, margin: 'auto'}}>
         <p>Nama Menu: {this.props.namaMenu}</p>
         <p>Harga: {this.state.mataUang} {this.props.hargaMenu}</p>
-        <button onClick={() => this.handleGantiMataUang('$')}>Ganti Mata Uang</button>
+        <button onClick={() => this.handleGantiMataUang('$')} className="btn btn-primary">Ganti Mata Uang</button>
       </div>
     )
   }
