@@ -10,3 +10,11 @@ Latihan membuat web app dengan React
 - view ke halaman nodeJS, silahkan ikuti
 - kalau sudah cek nodeJS apakah sudah terinstall atau belum dengan `$ node -v` di terminal
 - kalau sudah cek npm apakah sudah terinstall atau belum dengan `$ npm -v` di terminal
+
+
+## Buat Project React
+`$ npx create-react-app 01-my-app`
+`$ cd 01-my-app`
+
+## Run React App
+`$ npm start`
