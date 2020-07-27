@@ -13,6 +13,13 @@ class App extends Component {
       menuMakanan: [
         { nama: 'Ayam Bakar', harga: 25000, stock: 10 },
         { nama: 'Nasi Bakar', harga: 21000, stock: 0 },
+      ],
+      menuMinuman: [
+        { id: 1, nama: 'Es Teh Manis', harga: 25000 },
+        { id: 2, nama: 'Jeruk Panas', harga: 31000 },
+        { id: 3, nama: 'Jeruk Dingin', harga: 41000 },
+        { id: 4, nama: 'Jus Tomat', harga: 51000 },
+        { id: 5, nama: 'Kopi Pahit', harga: 11000 },
       ]
     }
   }
@@ -49,8 +56,9 @@ class App extends Component {
         />
         
         <h2 style={mainContentStyle}>Menu Minuman</h2>
-        <MenuMinuman namaMenu={"Es Teh Manis"} hargaMenu={5000}/>
-        <MenuMinuman namaMenu={"Jeruk Panas"} hargaMenu={10000}/>
+        { this.state.menuMinuman.map((menu, index) => 
+          <MenuMinuman key={menu.id} namaMenu={menu.nama} hargaMenu={menu.harga}/>  
+        )}
       </div>
     );
   }
