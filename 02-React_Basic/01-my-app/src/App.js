@@ -24,7 +24,7 @@ class App extends Component {
         <h1>Caffee { this.state.namaCafe }</h1>
         <button onClick={this.handleGantiNama}>Ganti Nama Kafe</button>
 
-        <h2>Menu Makanan</h2>
+        <h2 className="header-menu">Menu Makanan</h2>
         <MenuMakanan namaMenu={"Ayam Bakar"} hargaMenu={35000}/>
         <MenuMakanan namaMenu={"Indomie Rebus"} hargaMenu={15000}/>
         
