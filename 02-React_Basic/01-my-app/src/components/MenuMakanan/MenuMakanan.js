@@ -1,11 +1,11 @@
 import React from 'react';
 
 // nama function diawali lowercase
-var menuMakanan = () => {
+var menuMakanan = (props) => {
   return(
     <div style={{ border: "1px solid black", width: 300, margin: 'auto'}}>
-      <p>Nama Menu: Indomie Origina</p>
-      <p>Harga: Rp. 35.000</p>
+      <p>Nama Menu : { props.namaMenu }</p>
+      <p>Harga : Rp. { props.hargaMenu }</p>
     </div>
   )
 }
