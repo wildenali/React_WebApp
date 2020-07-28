@@ -9,7 +9,8 @@ class App extends Component {
     this.state = {
       members: [],
       first_name: '',
-      last_name: ''
+      last_name: '',
+      buttonDisable: false
     }
   }
 
@@ -20,6 +21,7 @@ class App extends Component {
   onSubmitHandler = (e) => {
     console.log('form di submit')
     e.preventDefault()
+    this.setState({ buttonDisable: true })  // tambah state buttonDisable ini kondisi ketika setelah ngirim data, button di disable, supaya user tidak nge klik banyak kali
     var payload = {
       first_name: this.state.first_name,
       last_name: this.state.last_name
@@ -30,7 +32,7 @@ class App extends Component {
         console.log('response', response.data)
         var members = [...this.state.members]
         members.push(response.data)
-        this.setState({ members })
+        this.setState({ members, buttonDisable: false }) // ini supaya kondisi button bisa di klik
       })
       .catch(error => {
         console.log(error)
@@ -97,7 +99,13 @@ class App extends Component {
                     onChange={this.inputOnChangeHandler}
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  disabled={this.state.buttonDisable}
+                >
+                  Submit
+                </button>
               </form>
           </div>
         </div>
