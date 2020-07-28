@@ -11,6 +11,7 @@ class App extends Component {
     }
   }
 
+  // CRUD, Read data from database
   componentDidMount() {
     axios.get('https://reqres.in/api/users?page=1')
       .then(response => {
