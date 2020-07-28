@@ -10,7 +10,9 @@ class App extends Component {
       members: [],
       first_name: '',
       last_name: '',
-      buttonDisable: false
+      buttonDisable: false,
+      formStatus: 'create',
+      memberIdSelected: null,
     }
   }
 
@@ -51,6 +53,16 @@ class App extends Component {
       })
   }
 
+  // CRUD, Update
+  edtiButtonHandler = (member) => {
+    this.setState({
+      first_name: member.first_name,
+      last_name: member.last_name,
+      formStatus: 'edit',
+      memberIdSelected: member.id
+    })
+  }
+
   render() {
     return (
       <div className="container">
@@ -67,7 +79,12 @@ class App extends Component {
                       <h5 className="card-title">ID: {member.id}</h5>
                       <h5 className="card-text">First Name: {member.first_name}</h5>
                       <h5 className="card-text">Last Name: {member.last_name}</h5>
-                      <button className="btn btn-primary">Edit</button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => this.edtiButtonHandler(member)}
+                      >
+                        Edit
+                      </button>
                       <button className="btn btn-danger">Delete</button>
                     </div>
                   </div>
