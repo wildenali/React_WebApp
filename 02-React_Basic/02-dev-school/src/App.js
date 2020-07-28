@@ -28,6 +28,9 @@ class App extends Component {
     axios.post(url, payload)
       .then(response => {
         console.log('response', response.data)
+        var members = [...this.state.members]
+        members.push(response.data)
+        this.setState({ members })
       })
       .catch(error => {
         console.log(error)
