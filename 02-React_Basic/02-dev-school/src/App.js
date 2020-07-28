@@ -7,8 +7,31 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      members: []
+      members: [],
+      first_name: '',
+      last_name: ''
     }
+  }
+
+  // CRUD, Read data from database
+  inputOnChangeHandler = (event) => {
+    this.setState({ [event.target.name]: event.target.value })
+  }
+  onSubmitHandler = (e) => {
+    console.log('form di submit')
+    e.preventDefault()
+    var payload = {
+      first_name: this.state.first_name,
+      last_name: this.state.last_name
+    }
+    var url = 'https://reqres.in/api/users';
+    axios.post(url, payload)
+      .then(response => {
+        console.log('response', response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   // CRUD, Read data from database
@@ -50,14 +73,26 @@ class App extends Component {
           </div>
           <div className="col-md-6" style={{ border: '1px solid black', }}>
             <h2>Form</h2>
-              <form>
+              <form onSubmit={this.onSubmitHandler}>
                 <div className="form-group">
                   <label>First Name</label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="first_name"
+                    value={this.state.first_name}
+                    onChange={this.inputOnChangeHandler}
+                  />
                 </div>
                 <div className="form-group">
                   <label>Last Name</label>
-                  <input type="text" className="form-control"/>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="last_name"
+                    value={this.state.last_name}
+                    onChange={this.inputOnChangeHandler}
+                  />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
               </form>
