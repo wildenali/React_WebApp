@@ -2,7 +2,7 @@
 Latihan membuat web app dengan React
 
 
-## Berikut adalah beberapa hal yang perlu dipersiapkan untuk dapat memulai menggunakan React.
+## Persiapan untuk membuat Project React App.
 1. Node JS dan NPM (Node Package Manager)
 2. Package Create React App
 
