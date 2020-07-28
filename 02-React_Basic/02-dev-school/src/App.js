@@ -32,7 +32,7 @@ class App extends Component {
         console.log('response', response.data)
         var members = [...this.state.members]
         members.push(response.data)
-        this.setState({ members, buttonDisable: false }) // ini supaya kondisi button bisa di klik
+        this.setState({ members, buttonDisable: false, first_name: '', last_name: '' }) // ini supaya kondisi button bisa di klik
       })
       .catch(error => {
         console.log(error)
