@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 import './App.css';
+
+import Home from './pages/Home';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div>
           <nav className="navbar navbar-expand-sm navbar-light bg-light">
             <Link className="navbar-brand" href="/">Negara Api Course</Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +22,7 @@ class App extends Component {
               </div>
             </div>
           </nav>
-          <Route path="/" exact component={() => <h4>Home</h4>}></Route>
+          <Route path="/" exact component={Home}></Route>
           <Route path="/premium" component={() => <h4>Premium</h4>}></Route>
           <Route path="/fireschool" component={() => <h4>FireSchool</h4>}></Route>
         </div>
