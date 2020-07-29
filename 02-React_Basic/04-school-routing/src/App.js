@@ -4,6 +4,7 @@ import './App.css';
 
 import Home from './pages/Home';
 import Premium from './pages/Premium';
+import FireSchool from './pages/FireSchool';
 
 class App extends Component {
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
           <div style={{ paddingTop: 45 }}>
             <Route path="/" exact component={Home}></Route>
             <Route path="/premium" component={Premium}></Route>
-            <Route path="/fireschool" component={() => <h4>FireSchool</h4>}></Route>
+            <Route path="/fireschool" component={FireSchool}></Route>
           </div>
         </div>
       </Router>
