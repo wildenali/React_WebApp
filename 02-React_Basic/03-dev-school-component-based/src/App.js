@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
+import Members from './components/Members/Members';
+
 class App extends Component {
 
   constructor(props) {
@@ -115,29 +117,11 @@ class App extends Component {
             <h2>Member</h2>
             <div className="row">
               
-              { this.state.members.map((member, index) => (
-                <div className="col-md-6" key={member.id}>
-                  <div className="card" style={{ margin: 10 }}>
-                    <div className="card-body">
-                      <h5 className="card-title">ID: {member.id}</h5>
-                      <h5 className="card-text">First Name: {member.first_name}</h5>
-                      <h5 className="card-text">Last Name: {member.last_name}</h5>
-                      <button
-                        className="btn btn-primary"
-                        onClick={() => this.editButtonHandler(member)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => this.deleteButtonHandler(member.id)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )) }
+              <Members
+                members = {this.state.members}
+                editButtonClick = {(member) => this.editButtonHandler(member)}
+                deleteButtonClick = {(id) => this.deleteButtonHandler(id)}
+              />
               
             </div>
           </div>
