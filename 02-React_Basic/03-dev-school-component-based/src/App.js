@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 import Members from './components/Members/Members';
+import Form from './components/Form/Form';
 
 class App extends Component {
 
@@ -127,35 +128,13 @@ class App extends Component {
           </div>
           <div className="col-md-6" style={{ border: '1px solid black', }}>
               <h2>Form {this.state.formStatus}</h2>
-              <form onSubmit={this.onSubmitHandler}>
-                <div className="form-group">
-                  <label>First Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="first_name"
-                    value={this.state.first_name}
-                    onChange={this.inputOnChangeHandler}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Last Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="last_name"
-                    value={this.state.last_name}
-                    onChange={this.inputOnChangeHandler}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  disabled={this.state.buttonDisable}
-                >
-                  Submit
-                </button>
-              </form>
+              <Form
+                onSubmitForm = {this.onSubmitHandler}
+                onChange = {this.inputOnChangeHandler}
+                first_name = {this.state.first_name}
+                last_name = {this.state.last_name}
+                buttonDisabled = {this.state.buttonDisable}
+              />
           </div>
         </div>
       </div>
