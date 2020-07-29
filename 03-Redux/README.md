@@ -5,3 +5,7 @@
 - Reducer akan menerima Action dan membaca pesan di dalam nya. Reducer menentukan apa yang akan dilakukan terhadap Store berdasar info type dari Action. Sedangkan payload Action dapat digunakan untuk memberikan data baru pada Store.
 - State Store akan berubah sesuai yang dilakukan Reducer
 - Perubahan state pada Store akan menginformasikan kepada semua Component yang sudah melakukan subscribe, dan mengirimkan state baru melalui props.
+
+
+# Install Redux
+`$ npm i -S redux`
