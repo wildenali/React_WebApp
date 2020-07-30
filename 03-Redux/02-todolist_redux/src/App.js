@@ -25,8 +25,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App container">
-          <Form submit={this.handleSubmit}/>
-          <List todos={this.state.todos}/>
+          <Form/>
+          <List/>
         </div>
       </Provider>
     );
