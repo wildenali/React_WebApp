@@ -7,7 +7,11 @@ class List extends Component {
     return (
       <ul className="list-group">
         {this.props.todos.map(todo => (
-          <li className="list-group-item">{todo}</li>
+          <li className="list-group-item">
+            {todo}
+            <button className="btn btn-danger float-right">Delete</button>
+          </li>
+
         ))}
       </ul>
     )    
