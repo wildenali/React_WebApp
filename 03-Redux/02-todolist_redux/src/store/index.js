@@ -73,7 +73,7 @@ const rootReducer = combineReducers({
   noteReducer: noteReducer
 })
 
-
-const store = createStore(rootReducer)
+// supaya bisa menggunakan redux dev tool di chrom
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 export default store
