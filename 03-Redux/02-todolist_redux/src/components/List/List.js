@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import TextAndForm from './TextAndForm'
 
 class List extends Component {
 
@@ -11,14 +12,12 @@ class List extends Component {
     return (
       <ul className="list-group">
         {this.props.todos.map((todo, index) => (
-          <li key={index} className="list-group-item">
-            {todo}
-            <button
-              className="btn btn-danger float-right"
-              onClick={() => this.deleteHandler(index)}
-            >
-              Delete
-            </button>
+          <li key={index} className="list-group-item container">
+            <TextAndForm 
+              todo={todo}
+              index={index}
+              onDelete={() => this.deleteHandler(index)}
+            />
           </li>
 
         ))}

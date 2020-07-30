@@ -36,7 +36,7 @@ class TextAndForm extends Component {
 
     // default tampilan todo berupa text
     var todo = (
-      <p>{this.state.todo}</p>
+      <p>{this.props.todo}</p>
     )
 
     // default tampilan disamping text todo berupa tombol edit
@@ -56,7 +56,7 @@ class TextAndForm extends Component {
         <input
           className="form-control"
           type="text"
-          value={this.state.todo}
+          value={this.props.todo}
           onChange={this.onChangeHandler}
         />
       )
@@ -81,3 +81,5 @@ class TextAndForm extends Component {
     )
   }
 }
+
+export default TextAndForm
