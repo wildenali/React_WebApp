@@ -3,13 +3,22 @@ import { connect } from 'react-redux'
 
 class List extends Component {
 
+  deleteHandler(index) {
+    this.props.deleteToDo(index)
+  }
+
   render (){
     return (
       <ul className="list-group">
-        {this.props.todos.map(todo => (
-          <li className="list-group-item">
+        {this.props.todos.map((todo, index) => (
+          <li key={index} className="list-group-item">
             {todo}
-            <button className="btn btn-danger float-right">Delete</button>
+            <button
+              className="btn btn-danger float-right"
+              onClick={() => this.deleteHandler(index)}
+            >
+              Delete
+            </button>
           </li>
 
         ))}
@@ -30,11 +39,18 @@ mapStateToProps ini kita gunakan untuk memasukan state yang ada di store ke dala
 Jadi kita dapat mengakses nya dengan cara this.props.todos
 */
 
+// Fungsi Delete
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteToDo: (index) => dispatch({ type: 'DELETE_TODO', payload: index })
+  }
+}
+
 // / Hubungkan componen dengan store
 // hapus export default lama
 // export default List
 // export default baru dengan connect
-export default connect(mapStateToProps, null)(List)
+export default connect(mapStateToProps, mapDispatchToProps)(List)
 /*
 Method connect menerima dua parameter yaitu mapStateToProps dan mapDispatchToProps.
 Kegunaan mapStateToProps sudah dijelaskan diatas, yaitu memasukan state store ke dalam props component,
