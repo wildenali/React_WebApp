@@ -29,7 +29,7 @@ class List extends Component {
 // Lakukan subscribe terhadap perubahan sate yang ada pada store
 const mapStateToProps = state => {
   return {
-    todos: state.todos
+    todos: state.todoReducer.todos
   }
 }
 /*
