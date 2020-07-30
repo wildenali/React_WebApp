@@ -1,0 +1,1 @@
+export const addTodo = (todo) => ({ type: 'ADD_TODOS', payload: todo })
