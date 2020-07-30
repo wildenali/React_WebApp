@@ -7,6 +7,9 @@ import List from './components/List/List'
 import { Provider } from 'react-redux'
 import store from './store'
 
+// Menampilkan Notes
+import NoteList from './components/NotesList/NoteList'
+
 class App extends Component {
   constructor () {
     super()
@@ -27,6 +30,7 @@ class App extends Component {
         <div className="App container">
           <Form/>
           <List/>
+          <NoteList/>
         </div>
       </Provider>
     );
