@@ -30,7 +30,7 @@ Jadi kita dapat mengakses nya dengan cara this.props.todos
 // hapus export default lama
 // export default List
 // export default baru dengan connect
-export default connect(mapStateToProps, null)(list)
+export default connect(mapStateToProps, null)(List)
 /*
 Method connect menerima dua parameter yaitu mapStateToProps dan mapDispatchToProps.
 Kegunaan mapStateToProps sudah dijelaskan diatas, yaitu memasukan state store ke dalam props component,
