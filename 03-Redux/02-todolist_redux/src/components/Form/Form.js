@@ -6,7 +6,8 @@ class Form extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      text: ''
+      text: '',
+      choice: 'Todo'
     }
   }  
 
@@ -19,9 +20,34 @@ class Form extends Component {
     this.setState({ text: '' })
   }
 
+  onClickChoice = (value) => {
+    this.setState({ choice: value })
+  }
+
   render () {
+
+    var styleButtonTodo = ''
+    var styleButtonNotes = ''
+    if(this.state.choice === 'Todo') {
+      styleButtonTodo = 'btn-success'
+    } else {
+      styleButtonNotes = 'btn-success'      
+    }
+
     return (
       <>
+        <button
+          className={`btn m-2 ${styleButtonTodo}`}
+          onClick={() => this.onClickChoice('Todo')}
+        >
+          Switch to Add ToDo
+        </button>
+        <button
+          className={`btn ${styleButtonNotes}`}
+          onClick={() => this.onClickChoice('Notes')}
+        >
+          Switch to Add Notes
+        </button>
         <p>Add Todo</p>
         <div className="form-group">
           <input 
