@@ -25,7 +25,7 @@ class TextAndForm extends Component {
   }
   // fungsi untuk hadnle ketika user klik tombol delete
   deleteButtonHandler = () => {
-    this.props.onDelete()
+    this.props.deleteToDo(this.props.index)
   }
 
   // fungsi untuk handle ketika user edit text di form
@@ -86,7 +86,8 @@ class TextAndForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    editTodo: (index, todo) => dispatch({ type: 'EDIT_TODO', payload: { index, todo } })
+    editTodo: (index, todo) => dispatch({ type: 'EDIT_TODO', payload: { index, todo } }),
+    deleteToDo: (index) => dispatch({ type: 'DELETE_TODO', payload: index })
   }
 }
 

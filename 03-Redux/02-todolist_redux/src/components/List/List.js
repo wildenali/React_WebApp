@@ -16,7 +16,6 @@ class List extends Component {
             <TextAndForm 
               todo={todo}
               index={index}
-              onDelete={() => this.deleteHandler(index)}
             />
           </li>
 
@@ -41,7 +40,7 @@ Jadi kita dapat mengakses nya dengan cara this.props.todos
 // Fungsi Delete
 const mapDispatchToProps = dispatch => {
   return {
-    deleteToDo: (index) => dispatch({ type: 'DELETE_TODO', payload: index })
+ 
   }
 }
 
