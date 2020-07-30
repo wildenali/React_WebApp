@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { editToDo, deleteToDo } from '../../store/actions/todoActions'
 
 class TextAndForm extends Component {
   constructor(props) {
@@ -86,8 +87,8 @@ class TextAndForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    editTodo: (index, todo) => dispatch({ type: 'EDIT_TODO', payload: { index, todo } }),
-    deleteToDo: (index) => dispatch({ type: 'DELETE_TODO', payload: index })
+    editTodo: (index, todo) => dispatch( editToDo({ index, todo }) ),
+    deleteToDo: (index) => dispatch( deleteToDo(index) )
   }
 }
 
