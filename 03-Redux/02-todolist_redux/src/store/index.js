@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+import * as actionTypes from './actions/actionTypes'
 
 const initialState = {
   todos: []
@@ -6,12 +7,12 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_TODOS':
+    case actionTypes.ADD_TODO:
       return {
         ...state,
         todos: [...state.todos, action.payload]
       }
-    case 'DELETE_TODO':
+    case actionTypes.DELETE_TODO:
       // ---------------- Cara 1 ----------------
       // // menghapus dengan method splice
       // // copu state todos
@@ -33,7 +34,7 @@ const rootReducer = (state = initialState, action) => {
         todos: newTodos
       }
       // ---------------- Cara 2 ----------------
-    case 'EDIT_TODO':
+    case actionTypes.EDIT_TODO:
       // edit state
       // copy state todos
       let todos = [...state.todos]

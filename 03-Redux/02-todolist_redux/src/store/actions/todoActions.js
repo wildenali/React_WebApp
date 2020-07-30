@@ -1,11 +1,16 @@
-export const addTodo = (todo) => ({ type: 'ADD_TODOS', payload: todo })
+import * as actionTypes from './actionTypes'
+
+export const addTodo = (todo) => ({
+  type: actionTypes.ADD_TODO,
+  payload: todo
+})
 
 export const editToDo = (payload) => ({
-  type: 'EDIT_TODO',
+  type: actionTypes.EDIT_TODO,
   payload: payload
 })
 
 export const deleteToDo = (index) => ({
-  type: 'DELETE_TODO',
+  type: actionTypes.DELETE_TODO,
   payload: index
 })
