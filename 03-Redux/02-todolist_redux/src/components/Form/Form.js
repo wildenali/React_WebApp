@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../../store/actions/todoActions'
+import { addNote } from '../../store/actions/noteAction'
 
 class Form extends Component {
   constructor (props) {
@@ -16,7 +17,11 @@ class Form extends Component {
   }
 
   onSubmit = () => {
-    this.props.addTodos(this.state.text)
+    if (this.state.choice === 'Todo') {
+      this.props.addTodos(this.state.text)
+    } else {
+      this.props.addNotes(this.state.text)
+    }
     this.setState({ text: '' })
   }
 
@@ -62,7 +67,8 @@ class Form extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTodos: (todo) => dispatch(addTodo(todo))
+    addTodos: (todo) => dispatch(addTodo(todo)),
+    addNotes: (note) => dispatch(addNote(note))
   }
 }
 
