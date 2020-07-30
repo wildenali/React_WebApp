@@ -1,12 +1,15 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import * as actionTypes from './actions/actionTypes'
 
-const initialState = {
-  todos: [],
+// initial state di pisah
+const initialStateTodos = {
+  todos: []
+}
+const initialStateNotes = {
   notes: []
 }
 
-const rootReducer = (state = initialState, action) => {
+const todoReducer = (state= initialStateTodos, action) => {
   switch (action.type) {
     case actionTypes.ADD_TODO:
       return {
@@ -48,6 +51,13 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         todos
       }
+    default:
+      return state
+  }
+}
+
+const noteReducer = (state= initialStateNotes, action) => {
+  switch (action.type) {
     case actionTypes.ADD_NOTE:
       return {
         ...state,
@@ -57,6 +67,12 @@ const rootReducer = (state = initialState, action) => {
       return state
   }
 }
+
+const rootReducer = combineReducers({
+  todoReducer: todoReducer,
+  noteReducer: noteReducer
+})
+
 
 const store = createStore(rootReducer)
 
