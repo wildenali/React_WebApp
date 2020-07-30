@@ -33,6 +33,19 @@ const rootReducer = (state = initialState, action) => {
         todos: newTodos
       }
       // ---------------- Cara 2 ----------------
+    case 'EDIT_TODO':
+      // edit state
+      // copy state todos
+      let todos = [...state.todos]
+      // ganti data todo
+      let index = action.payload.index
+      let todo = action.payload.todo
+      todos[index] = todo
+      // retusn state baru
+      return {
+        ...state,
+        todos
+      }
     default:
       return state
   }
