@@ -35,7 +35,7 @@ const FireSchool = () => (
     <div className="row" style={{ marginTop: 40, marginBottom: 100 }}>
       <Intro content={intro.content} />
       <div className="col-md-6">
-        <img src="http://www.wildenali.com/img/kucing.jpg" alt=""/>
+        <img src="http://www.wildenali.com/img/kucing.jpg" style={{ width: '100%' }} alt=""/>
       </div>
     </div>
     
