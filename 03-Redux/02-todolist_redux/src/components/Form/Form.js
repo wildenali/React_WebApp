@@ -48,7 +48,7 @@ class Form extends Component {
         >
           Switch to Add Notes
         </button>
-        <p>Add Todo</p>
+        <p>Add {this.state.choice}</p>
         <div className="form-group">
           <input 
           value={this.state.text}
